@@ -3,7 +3,7 @@ using UnityEngine.InputSystem;
 
 public class MoveScript : MonoBehaviour
 {
-    public int rotationSpeed = 1;
+    public float rotationSpeed = 1;
     private float initSpeed;
     public float walkSpeed = 1;
     public float runSpeed = 2;
