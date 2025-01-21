@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class MoveScript : MonoBehaviour
-{
+{   
     public float rotationSpeed = 1;
     private float initSpeed;
     public float walkSpeed = 1;
