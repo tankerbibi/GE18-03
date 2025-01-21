@@ -3380,8 +3380,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\u305F\u307E\u3054\n"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: c615738b00520fc4e9b0ca950839a348, type: 2}
-  m_sharedMaterial: {fileID: -4653174384226908887, guid: c615738b00520fc4e9b0ca950839a348, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 15c746b443783394c9fd3dd556ae8536, type: 2}
+  m_sharedMaterial: {fileID: 2220727742185469766, guid: 15c746b443783394c9fd3dd556ae8536, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
