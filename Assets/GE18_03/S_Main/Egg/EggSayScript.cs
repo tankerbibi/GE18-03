@@ -1,0 +1,73 @@
+using System.Collections;
+using TMPro;
+using UnityEngine;
+using UnityEngine.UI;
+
+public class EggSayScript : MonoBehaviour
+{
+    public BoxCollider BoxCollider;
+    public TMP_Text text;
+    private Coroutine _showCoroutine;
+    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    void Start()
+    {
+        text.maxVisibleCharacters = 0;
+    }
+
+    void OnTriggerEnter(Collider t)
+    {
+        if(t.gameObject.tag == "Player")
+        {
+            switch (WhichStageScript.stage)
+            {
+              case WhichStageScript.WhichStage.Tutorial:
+                    {
+                        string message = "卵＜卵が食べたい。取ってきてくれ。";
+                        text.text = message;
+
+                    }
+                    break;
+                case WhichStageScript.WhichStage.Stage1:
+                    {
+                        string message = "卵＜もっとあるだろ？";
+                        text.text = message;
+                    }
+                    break;
+                    case WhichStageScript.WhichStage.Stage2:
+                    {
+                        string message = "卵＜............。";
+                        text.text = message;
+                    }
+                    break;
+                case WhichStageScript.WhichStage.Stage3:
+                    {
+                        string message = "卵＜%'$)#()&#&($%)%$()$($#)%($)(%)%";
+                        text.text = message;
+                    }
+                    break;
+            }
+            show();
+        }
+    }
+
+    public void show()
+    {
+        if(_showCoroutine == null)
+        {
+            _showCoroutine = StartCoroutine(Simple());
+        }
+    }
+
+    private IEnumerator Simple()
+    {
+        text.maxVisibleCharacters = 0;
+
+        for(var i = 0; i < text.text.Length; i++)
+        {
+            yield return new WaitForSeconds(0.2f);
+
+            text.maxVisibleCharacters = i + 1;
+        }
+
+    }
+}
