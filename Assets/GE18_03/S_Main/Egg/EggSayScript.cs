@@ -1,5 +1,6 @@
 using System.Collections;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -8,6 +9,8 @@ public class EggSayScript : MonoBehaviour
     public BoxCollider BoxCollider;
     public TMP_Text text;
     private Coroutine _showCoroutine;
+    public float wait = 0.2f;
+    public EggSplineScript eggSplineScript;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -64,10 +67,10 @@ public class EggSayScript : MonoBehaviour
 
         for(var i = 0; i < text.text.Length; i++)
         {
-            yield return new WaitForSeconds(0.2f);
+            yield return new WaitForSeconds(wait);
 
             text.maxVisibleCharacters = i + 1;
         }
-
+        eggSplineScript.flg = true;
     }
 }

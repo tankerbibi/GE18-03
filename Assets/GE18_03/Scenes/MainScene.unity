@@ -2602,7 +2602,7 @@ GameObject:
   - component: {fileID: 377840571}
   - component: {fileID: 377840570}
   m_Layer: 0
-  m_Name: Cube (2)
+  m_Name: Stage03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3147,7 +3147,7 @@ GameObject:
   - component: {fileID: 479371835}
   - component: {fileID: 479371834}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: Stage02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5197,6 +5197,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4385080170327957909, guid: ff62b58c5a9ea164fa8ddf8038e10cd1, type: 3}
   m_PrefabInstance: {fileID: 813386531}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &827244184 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1614292198452665789, guid: 19e153ca6b890704196f4d5e05ed483e, type: 3}
+  m_PrefabInstance: {fileID: 2105538097}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &838198544
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6754,13 +6759,17 @@ PrefabInstance:
       propertyPath: text
       value: 
       objectReference: {fileID: 500786804}
+    - target: {fileID: 1312890511151771020, guid: 2fc771a5a83c57f4fb9c7484fed0a602, type: 3}
+      propertyPath: eggSplineScript
+      value: 
+      objectReference: {fileID: 1700521818}
     - target: {fileID: 2683281189705261307, guid: 2fc771a5a83c57f4fb9c7484fed0a602, type: 3}
       propertyPath: m_LocalPosition.x
       value: 5.5522904
       objectReference: {fileID: 0}
     - target: {fileID: 2683281189705261307, guid: 2fc771a5a83c57f4fb9c7484fed0a602, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.6021795
+      value: 2.32
       objectReference: {fileID: 0}
     - target: {fileID: 2683281189705261307, guid: 2fc771a5a83c57f4fb9c7484fed0a602, type: 3}
       propertyPath: m_LocalPosition.z
@@ -6798,6 +6807,34 @@ PrefabInstance:
       propertyPath: m_Name
       value: S_MainEgg
       objectReference: {fileID: 0}
+    - target: {fileID: 5675551610392149458, guid: 2fc771a5a83c57f4fb9c7484fed0a602, type: 3}
+      propertyPath: fea
+      value: 
+      objectReference: {fileID: 2073024379}
+    - target: {fileID: 5675551610392149458, guid: 2fc771a5a83c57f4fb9c7484fed0a602, type: 3}
+      propertyPath: goal
+      value: 
+      objectReference: {fileID: 827244184}
+    - target: {fileID: 5675551610392149458, guid: 2fc771a5a83c57f4fb9c7484fed0a602, type: 3}
+      propertyPath: time
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5675551610392149458, guid: 2fc771a5a83c57f4fb9c7484fed0a602, type: 3}
+      propertyPath: stage1
+      value: 
+      objectReference: {fileID: 2073024379}
+    - target: {fileID: 5675551610392149458, guid: 2fc771a5a83c57f4fb9c7484fed0a602, type: 3}
+      propertyPath: stage2
+      value: 
+      objectReference: {fileID: 479371837}
+    - target: {fileID: 5675551610392149458, guid: 2fc771a5a83c57f4fb9c7484fed0a602, type: 3}
+      propertyPath: stage3
+      value: 
+      objectReference: {fileID: 377840573}
+    - target: {fileID: 5675551610392149458, guid: 2fc771a5a83c57f4fb9c7484fed0a602, type: 3}
+      propertyPath: Tutorial
+      value: 
+      objectReference: {fileID: 1700521817}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -10234,6 +10271,22 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 1.23}
   m_SizeDelta: {x: 10, y: 10}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!4 &1700521817 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2683281189705261307, guid: 2fc771a5a83c57f4fb9c7484fed0a602, type: 3}
+  m_PrefabInstance: {fileID: 1160324608}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1700521818 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5675551610392149458, guid: 2fc771a5a83c57f4fb9c7484fed0a602, type: 3}
+  m_PrefabInstance: {fileID: 1160324608}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d13ad6afaba320843949c07f8154b380, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1706884954
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11961,7 +12014,7 @@ GameObject:
   - component: {fileID: 2073024377}
   - component: {fileID: 2073024376}
   m_Layer: 0
-  m_Name: Cube (1)
+  m_Name: Stage01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -7,7 +7,8 @@ public class WhichStageScript : MonoBehaviour
         Tutorial,
         Stage1,
         Stage2,
-        Stage3,
+        Stage3
     }
-    public static WhichStage stage = WhichStage.Tutorial;
+
+    public static WhichStage stage = WhichStage.Stage2;
 }
