@@ -10,5 +10,5 @@ public class WhichStageScript : MonoBehaviour
         Stage3
     }
 
-    public static WhichStage stage = WhichStage.Stage2;
+    public static WhichStage stage = WhichStage.Tutorial;
 }

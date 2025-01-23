@@ -6,7 +6,8 @@ public class EtriggerScript : MonoBehaviour
     {
         if(t.gameObject.tag == "Player")
         {
-            Debug.Log("ÉSÅ[ÉãÇæÇÊ");
+            EtriggerPlayerScript eTriggerPlayerScript = t.gameObject.GetComponent<EtriggerPlayerScript>();
+            eTriggerPlayerScript.flg = true;
         }
     }
 }
