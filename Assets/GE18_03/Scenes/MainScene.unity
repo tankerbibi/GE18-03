@@ -6807,17 +6807,29 @@ PrefabInstance:
       propertyPath: m_Name
       value: S_MainEgg
       objectReference: {fileID: 0}
+    - target: {fileID: 3876902331092027728, guid: 2fc771a5a83c57f4fb9c7484fed0a602, type: 3}
+      propertyPath: rate
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3876902331092027728, guid: 2fc771a5a83c57f4fb9c7484fed0a602, type: 3}
+      propertyPath: amount
+      value: 0.004
+      objectReference: {fileID: 0}
     - target: {fileID: 5675551610392149458, guid: 2fc771a5a83c57f4fb9c7484fed0a602, type: 3}
       propertyPath: fea
       value: 
       objectReference: {fileID: 2073024379}
+    - target: {fileID: 5675551610392149458, guid: 2fc771a5a83c57f4fb9c7484fed0a602, type: 3}
+      propertyPath: upY
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 5675551610392149458, guid: 2fc771a5a83c57f4fb9c7484fed0a602, type: 3}
       propertyPath: goal
       value: 
       objectReference: {fileID: 827244184}
     - target: {fileID: 5675551610392149458, guid: 2fc771a5a83c57f4fb9c7484fed0a602, type: 3}
       propertyPath: time
-      value: 2
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 5675551610392149458, guid: 2fc771a5a83c57f4fb9c7484fed0a602, type: 3}
       propertyPath: stage1

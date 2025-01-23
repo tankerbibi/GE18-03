@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using System.Timers;
 using UnityEngine;
 using UnityEngine.UIElements;
@@ -11,50 +12,46 @@ public class EggSplineScript : MonoBehaviour
     public Transform stage2;
     public Transform stage3;
     public Transform goal;
-    private Vector3 targetPos;
     public float time = 1.0f;
     private Vector3 velocity = Vector3.zero;
-    private Vector3 goalPos;
     public bool flg = false;
-    public float yDuration = 1f;
-    private float elapesed = 0f;
     private Vector3 initPos;
+    private Vector3 targetPos;
     public EggMoveScript eggMoveScript;
     public float upY = 2f;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        initPos = transform.position;
         switch (WhichStageScript.stage)
         {
             case WhichStageScript.WhichStage.Tutorial:
                 {
+                    initPos = transform.position;
                     targetPos = stage1.position;
                 }
                 break;
             case WhichStageScript.WhichStage.Stage1:
                 {
-                    transform.position = new Vector3(stage1.position.x, stage1.position.y + upY, stage1.position.z);
+                    initPos = stage1.position;
                     targetPos = stage2.position;
-                    eggMoveScript.initY = Tutorial.position.y + upY;
                 }
                 break;
             case WhichStageScript.WhichStage.Stage2:
                 {
-                    transform.position = new Vector3(stage2.position.x, stage2.position.y  + upY, stage2.position.z);
+                    initPos = stage2.position;
                     targetPos = stage3.position;
-                    eggMoveScript.initY = stage2.position.y + upY;
                 }
                 break;
             case WhichStageScript.WhichStage.Stage3:
                 {
-                    transform.position = new Vector3(stage3.position.x, stage3.position.y + upY, stage3.position.z);
+                    initPos = stage3.position;
                     targetPos = goal.position;
-                    eggMoveScript.initY = stage3.position.y + upY;
                 }
                 break;
         }
+        transform.position = new Vector3(initPos.x, initPos.y + upY, initPos.z);
+        eggMoveScript.initY = initPos.y + upY;
 
     }
 
@@ -63,10 +60,9 @@ public class EggSplineScript : MonoBehaviour
     {
         if (flg)
         {
-            elapesed += Time.deltaTime;
-            float t = Mathf.Clamp01(elapesed / yDuration);
-            eggMoveScript.initY = Vector3.Lerp(initPos, targetPos, t).y + upY;
-            transform.position = Vector3.SmoothDamp(transform.position, targetPos, ref velocity, time);
+            Vector3 tmp = Vector3.SmoothDamp(transform.position, new Vector3(targetPos.x,targetPos.y + upY, targetPos.z), ref velocity, time);
+            transform.position = tmp;
+            eggMoveScript.initY = tmp.y + upY;
         }
     }
 }
