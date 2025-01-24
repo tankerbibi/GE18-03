@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 8545385685800012579}
   - component: {fileID: 8102929906454427055}
   - component: {fileID: -3324368630913326547}
+  - component: {fileID: -4036846598346515552}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -117,6 +118,22 @@ MonoBehaviour:
         m_CallState: 1
     m_ActionId: 94c900a5-b4a9-406a-b2e5-c88690ae7392
     m_ActionName: PlayerinMain/Run
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: -4036846598346515552}
+        m_TargetAssemblyTypeName: EtriggerPlayer2Script, Assembly-CSharp
+        m_MethodName: OnInterrupt
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 890badb0-dae9-479f-8533-701660e1bdf0
+    m_ActionName: 'PlayerinMain/Interrupt[/Keyboard/e]'
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: PlayerinMain
@@ -231,6 +248,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d741b0fe531951947b3366efe2dcd64d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &-4036846598346515552
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2350652681907635850}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 906e6dfff6892d146980905c5620418a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &4730107635649518892

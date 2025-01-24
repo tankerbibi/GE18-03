@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class WhichStageScript : MonoBehaviour
 {
@@ -10,5 +11,15 @@ public class WhichStageScript : MonoBehaviour
         Stage3
     }
 
+    public static Vector3 SavedPos;
+
     public static WhichStage stage = WhichStage.Tutorial;
+
+    private void Start()
+    {
+        if(stage != WhichStage.Tutorial && SceneManager.GetActiveScene().name == "MainScene")
+        {
+            transform.position = SavedPos;
+        }
+    }
 }
