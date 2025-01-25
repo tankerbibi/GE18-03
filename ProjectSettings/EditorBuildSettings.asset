@@ -12,7 +12,7 @@ EditorBuildSettings:
     path: Assets/GE18_03/Scenes/MainScene.unity
     guid: 139046177f7229e4bb008442ffb1d7a6
   - enabled: 1
-    path: Assets/GE18_03/Scenes/SampleScene 1.unity
+    path: Assets/GE18_03/Scenes/Stage1Scene.unity
     guid: 6c797f9a81aa26e4e909d6119b484fa9
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 9e7be553448fa2546aea5752021cbcf7, type: 2}

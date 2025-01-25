@@ -185,10 +185,10 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.43
-  m_Height: 1.4
+  m_Radius: 0.26
+  m_Height: 1.72
   m_Direction: 1
-  m_Center: {x: 0, y: 0.71, z: 0}
+  m_Center: {x: 0, y: 0.89, z: 0}
 --- !u!114 &-5764673084955988389
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -201,7 +201,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c67c634894dff104fb1882675b48c2d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationSpeed: 2
+  rotationSpeed: 90
   walkSpeed: 1.6
   runSpeed: 4
 --- !u!95 &8545385685800012579
@@ -274,7 +274,6 @@ GameObject:
   - component: {fileID: 1927400632135632687}
   - component: {fileID: 5659084762471449651}
   - component: {fileID: 3762315334614401997}
-  - component: {fileID: 7611633527624972565}
   m_Layer: 0
   m_Name: Camera
   m_TagString: Untagged
@@ -400,21 +399,6 @@ MonoBehaviour:
     m_MipBias: 0
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
---- !u!114 &7611633527624972565
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4730107635649518892}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5d37bb7c483df6b449deec8e943095a0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 1327674205686831306}
-  offset: {x: 0, y: 1.33, z: -1.21}
-  cameraSpeed: 0
 --- !u!1001 &7174404047887097079
 PrefabInstance:
   m_ObjectHideFlags: 0

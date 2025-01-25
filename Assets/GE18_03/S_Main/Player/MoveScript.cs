@@ -54,7 +54,8 @@ public class MoveScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        rb.linearVelocity = this.transform.rotation * new Vector3(velocity.x * walkSpeed, rb.linearVelocity.y, velocity.z * walkSpeed);
-        this.transform.Rotate(0.0f,posNeg,0.0f);
+        Vector3 moveVector = transform.rotation * velocity * walkSpeed;
+        rb.linearVelocity = new Vector3(moveVector.x, rb.linearVelocity.y, moveVector.z);
+        transform.Rotate(0.0f,posNeg * Time.deltaTime, 0.0f);
     }
 }
