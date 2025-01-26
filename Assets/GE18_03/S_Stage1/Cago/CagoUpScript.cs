@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class CagoUpScript : MonoBehaviour
 {
-    public bool flg = false;
+    [System.NonSerialized]public bool flg = false;
     public float yAmount = 0;
     private Vector3 targetPos;
     private float speed = 5.0f;

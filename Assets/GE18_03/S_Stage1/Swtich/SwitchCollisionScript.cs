@@ -3,7 +3,8 @@ using UnityEngine;
 public class SwitchCollisionScript : MonoBehaviour
 {
     SwitchMoveScript switchMoveScript;
-    CagoUpScript cagoUpScript;
+    public CagoUpScript cagoUpScript;
+    public EtriggerPlayerScript etriggerPlayerScript;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -16,6 +17,7 @@ public class SwitchCollisionScript : MonoBehaviour
         {
             switchMoveScript.ChangeAppear();
             cagoUpScript.flg = true;
+            //etriggerPlayerScript.flg = true;
         }
     }
 }
