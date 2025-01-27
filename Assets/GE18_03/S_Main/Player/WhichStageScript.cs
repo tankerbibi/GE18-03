@@ -13,7 +13,7 @@ public class WhichStageScript : MonoBehaviour
 
     public static Vector3 SavedPos;
 
-    public static WhichStage stage = WhichStage.Stage3;
+    public static WhichStage stage = WhichStage.Tutorial;
 
     private void Start()
     {
