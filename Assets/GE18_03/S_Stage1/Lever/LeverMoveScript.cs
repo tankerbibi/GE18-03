@@ -7,11 +7,13 @@ public class LeverMoveScript : MonoBehaviour
         Up,
         Center,
         Down,
+        max
     }
-    private Select select = Select.Up;
+    public Select select = Select.Up;
     [SerializeField] private float rotateAmount = 50.0f;
     [SerializeField] private PlayerCheckScript playerCheckScript;
-    public bool tate = true;
+    private bool Upping = false;
+    private int cnt;
     private void Start()
     {
         transform.Rotate(0.0f, 0.0f, rotateAmount);
@@ -21,21 +23,43 @@ public class LeverMoveScript : MonoBehaviour
     {
         if (playerCheckScript.flg)
         {
-            switch (select)
+            cnt++;
+            if (Upping)
             {
-                case Select.Up:
-                    transform.Rotate(0.0f, 0.0f, -rotateAmount);
-                    select = Select.Center;
-                    break;
-                case Select.Center:
-                    transform.Rotate(0.0f, 0.0f, -rotateAmount);
-                    select = Select.Down;
-                    break;
-                case Select.Down:
-                    transform.Rotate(0.0f, 0.0f, 2 * rotateAmount);
-                    select = Select.Up;
-                    break;
+                transform.Rotate(0.0f, 0.0f, +rotateAmount);
+                select--;
             }
+            else
+            {
+                transform.Rotate(0.0f, 0.0f, -rotateAmount);
+                select++;
+            }
+            if(cnt >= (int)Select.max - 1)
+            {
+                cnt = 0;
+                Upping = !Upping;
+            }
+            //if (Upping)
+            //{
+            //    transform.Rotate(0.0f, 0.0f, -rotateAmount);
+            //    select--;
+            //    switch (select)
+            //    {
+            //        case Select.Up:
+            //            transform.Rotate(0.0f, 0.0f, -rotateAmount);
+            //            select = Select.Center;
+            //            break;
+            //        case Select.Center:
+            //            transform.Rotate(0.0f, 0.0f, -rotateAmount);
+            //            select = Select.Down;
+            //            break;
+            //        case Select.Down:
+            //            transform.Rotate(0.0f, 0.0f, 2 * rotateAmount);
+            //            select = Select.Up;
+            //            break;
+            //    }
+            
+            //}
         }
     }
 }

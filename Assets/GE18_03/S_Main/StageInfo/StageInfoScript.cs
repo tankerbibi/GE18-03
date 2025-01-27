@@ -4,9 +4,15 @@ public class StageInfoScript : MonoBehaviour
 {
     private EtriggerPlayer2Script eTriggerPlayer2Script;
     [SerializeField] private string SceneName;
+    private bool flg = false;
     void OnTriggerEnter(Collider t)
     {
-        if(t.tag == "Player")
+
+        if(t.tag == "Egg")
+        {
+            flg = true;
+        }
+        if(t.tag == "Player" && flg)
         {
             eTriggerPlayer2Script = t.gameObject.GetComponent<EtriggerPlayer2Script>();
             eTriggerPlayer2Script.flg = true;
@@ -18,7 +24,8 @@ public class StageInfoScript : MonoBehaviour
     {
         if (t.tag == "Player")
         {
-            eTriggerPlayer2Script.flg = false;
+            eTriggerPlayer2Script = t.gameObject.GetComponent<EtriggerPlayer2Script>();
+            eTriggerPlayer2Script.flg = true;
         }
     }
 }

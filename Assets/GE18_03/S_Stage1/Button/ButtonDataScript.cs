@@ -18,7 +18,7 @@ public class ButtonDataScript : MonoBehaviour
         if (playerCheckScript.flg)
         {
             buttonMoveScript.ChangeAppear();
-            //selectBanMoveScript.Push();
+            selectBanMoveScript.Push();
         }
     }
 }

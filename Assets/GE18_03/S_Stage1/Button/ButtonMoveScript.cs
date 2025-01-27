@@ -6,12 +6,12 @@ public class ButtonMoveScript : MonoBehaviour
     public Material green = default;
     private Material initM = default;
     private Vector3 initPos, targetPos;
-    public float yAmount = 0;
+    public float zAmount = 0;
     void Start()
     {
         initM = GetComponent<MeshRenderer>().material;
         initPos = transform.position;
-        targetPos = new Vector3(initPos.x, initPos.y + yAmount, initPos.z);
+        targetPos = new Vector3(initPos.x, initPos.y, initPos.z + zAmount);
     }
     public void ChangeAppear()
     {
