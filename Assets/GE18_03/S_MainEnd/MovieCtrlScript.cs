@@ -18,6 +18,7 @@ public class MovieCtrlScript : MonoBehaviour
 
         changeCameraScript.CameraChengeda(2);
         yield return new WaitForSeconds(3);
+        changeCameraScript.PlaySound();
         changeCameraScript.DestroyEgg();
         yield return new WaitForSeconds(1);
 
@@ -33,9 +34,10 @@ public class MovieCtrlScript : MonoBehaviour
         changeCameraScript.BigWarp();
 
         changeCameraScript.CameraChengeda(5);
-        yield return new WaitForSeconds(4f);
+        changeCameraScript.PlayNoize();
+        yield return new WaitForSeconds(3f);
         changeCameraScript.StartBig(3);
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(4f);
         SceneManager.LoadScene("EndScene");
 
 

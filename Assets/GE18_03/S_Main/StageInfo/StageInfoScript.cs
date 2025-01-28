@@ -2,30 +2,67 @@ using UnityEngine;
 
 public class StageInfoScript : MonoBehaviour
 {
-    private EtriggerPlayer2Script eTriggerPlayer2Script;
+    private EtriggerPlayer2Script eTriggerPlayer2Script = null;
     [SerializeField] private string SceneName;
-    private bool flg = false;
+    private bool eggEnter = false;
+    private bool pEnter = false;
+    private GameObject player = null;
+    public WhichStageScript.WhichStage myStage;
     void OnTriggerEnter(Collider t)
     {
-
-        if(t.tag == "Egg")
+        if (t.tag == "Egg")
         {
-            flg = true;
+            eggEnter = true;
+            if (pEnter)
+            {
+                if(player != null)
+                {
+                    if (WhichStageScript.stage != myStage)
+                    {
+                        eTriggerPlayer2Script = player.gameObject.GetComponent<EtriggerPlayer2Script>();
+                        eTriggerPlayer2Script.flg = true;
+                        eTriggerPlayer2Script.SceneName = SceneName;
+                    }
+                } 
+            }
         }
-        if(t.tag == "Player" && flg)
+        if (t.tag == "Player")
         {
-            eTriggerPlayer2Script = t.gameObject.GetComponent<EtriggerPlayer2Script>();
-            eTriggerPlayer2Script.flg = true;
-            eTriggerPlayer2Script.SceneName = SceneName;
+            player = t.gameObject;
+            pEnter = true;
+            if (eggEnter)
+            {
+                if(WhichStageScript.stage != myStage)
+                {
+                    eTriggerPlayer2Script = player.gameObject.GetComponent<EtriggerPlayer2Script>();
+                    eTriggerPlayer2Script.flg = true;
+                    eTriggerPlayer2Script.SceneName = SceneName;
+                }
+            }
         }
     }
 
     private void OnTriggerExit(Collider t)
     {
+        if (t.tag == "Egg")
+        {
+            eggEnter = false;
+            Debug.Log("EggExit");
+            if (eTriggerPlayer2Script != null)
+            {
+                eTriggerPlayer2Script.flg = false;
+            }
+        }
         if (t.tag == "Player")
         {
-            eTriggerPlayer2Script = t.gameObject.GetComponent<EtriggerPlayer2Script>();
-            eTriggerPlayer2Script.flg = true;
+            pEnter = false;
+            if (eTriggerPlayer2Script != null)
+            {
+                eTriggerPlayer2Script.flg = false;
+            }
         }
     }
+
+
+
 }

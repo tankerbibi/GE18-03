@@ -7,14 +7,18 @@ public class ButtonMoveScript : MonoBehaviour
     private Material initM = default;
     private Vector3 initPos, targetPos;
     public float zAmount = 0;
+    private AudioSource audioSource;
+    [SerializeField] private AudioClip sound;
     void Start()
     {
+        audioSource = GetComponent<AudioSource>();
         initM = GetComponent<MeshRenderer>().material;
         initPos = transform.position;
         targetPos = new Vector3(initPos.x, initPos.y, initPos.z + zAmount);
     }
     public void ChangeAppear()
     {
+        audioSource.PlayOneShot(sound);
         GetComponent<MeshRenderer>().material = green;
         transform.position = targetPos;
         Invoke("RevertAppear", 0.7f);

@@ -13,8 +13,8 @@ public class MoveScript : MonoBehaviour
     private Animator anim;
     private void Start()
     {
-        rb = this.GetComponent<Rigidbody>();
-        anim = this.GetComponent<Animator>();
+        rb = GetComponent<Rigidbody>();
+        anim = GetComponent<Animator>();
         initSpeed = walkSpeed;
     }
     public void OnMove(InputAction.CallbackContext context)

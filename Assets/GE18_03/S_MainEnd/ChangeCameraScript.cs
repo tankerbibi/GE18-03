@@ -16,10 +16,14 @@ public class ChangeCameraScript : MonoBehaviour
     public float biggerAmount1 = 1.0f;
     public float biggerAmount2 = 1.0f;
     public float biggerAmount3 = 1.0f;
+    public AudioClip sound;
+    public AudioClip sound2;
+    private AudioSource audioSource;
 
 
     private void Start()
     {
+        audioSource = GetComponent<AudioSource>();
         firstCamera.SetActive(true);
         secondCamera.SetActive(false);
         thirdCamera.SetActive(false);
@@ -115,5 +119,15 @@ public class ChangeCameraScript : MonoBehaviour
             Vector3 tmp = eggMen.transform.localScale;
             eggMen.transform.localScale = new Vector3(tmp.x + biggerAmount3, tmp.y + biggerAmount3, tmp.z + biggerAmount3);
         }
+    }
+
+    public void PlaySound()
+    {
+        audioSource.PlayOneShot(sound);
+    }
+
+    public void PlayNoize()
+    {
+        audioSource.PlayOneShot(sound2);
     }
 }
